@@ -7,13 +7,19 @@ spec:
   releaseName: wordpress
   chart:
     spec:
-      chart: wordpress
-      version: "18.0.0" 
-      sourceRef:
-        kind: HelmRepository
-        name: bitnami
-        namespace: flux-system
+      chart: oci://registry-1.docker.io/bitnamicharts/wordpress
+      version: 18.0.0
   interval: 1m
-  valuesFrom:
-    - kind: ConfigMap
-      name: wordpress-values
+  values:
+    mariadb:
+      auth:
+        rootPassword: admin
+        username: admin
+        password: admin
+        database: wordpress
+    wordpressUsername: admin
+    wordpressPassword: admin123
+    service:
+      type: NodePort
+      nodePorts:
+        http: 30080
