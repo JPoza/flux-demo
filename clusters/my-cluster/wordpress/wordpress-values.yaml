@@ -1,0 +1,21 @@
+mariadb:
+  auth:
+    rootPassword: admin
+    username: admin
+    password: admin
+    database: wordpress
+
+wordpressUsername: admin
+wordpressPassword: admin123
+
+service:
+  type: ClusterIP  
+
+ingress:
+  enabled: false
+
+persistence:
+  enabled: true
+  storageClass: ""  
+  accessMode: ReadWriteOnce
+  size: 8Gi

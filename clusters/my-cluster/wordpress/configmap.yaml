@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wordpress-values
+  namespace: default
+data:
+  values.yaml: |
+    mariadb:
+      auth:
+        rootPassword: "admin"
+        username: "admin"
+        password: "admin"
+        database: "wordpress"
+    service:
+      type: ClusterIP
+    wordpressUsername: admin
+    wordpressPassword: admin123
