@@ -7,7 +7,7 @@ spec:
   releaseName: wordpress
   chart:
     spec:
-      chart: ./charts/wordpress
+     chart: ../charts/wordpress
   interval: 1m
   values:
     mariadb:
