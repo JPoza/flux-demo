@@ -1,0 +1,14 @@
+mariadb:
+  auth:
+    rootPassword: admin
+    username: admin
+    password: admin
+    database: wordpress
+
+wordpressUsername: admin
+wordpressPassword: admin123
+
+service:
+  type: NodePort
+  nodePorts:
+    http: 30080
